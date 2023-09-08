@@ -30,7 +30,11 @@ This tutorial outlines the implementation of on-premises Active Directory within
           a Take note of the Resource Group and Virtual Network (Vnet) that get created at this time 
 - Step 2 Set Domain Controller’s NIC Private IP address to be static
 - Step 3 Create the Client VM (Windows 10) named “Client-1”. Use the same Resource Group and Vnet that was created in Step 1.a
-- Step 4 Ensure that both VMs are in the same Vnet (you can check the topology with Network Watcher
+- Step 4 Ensure that both VMs are in the same Vnet (you can check the topology with Network Watcher)
+
+<h2>Ensure Connectivity Between the Client (Client-1)and Domain Controller(DC-1)</h2>  
+
+- Step 1 
 
 <h2>Deployment and Configuration Steps</h2>
 
