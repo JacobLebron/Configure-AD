@@ -4,12 +4,8 @@
 </p>
 
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
-
-
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: How to Deploy on-premises Active Directory within Azure Compute](https://www.youtube.com)
+This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.
+<br />
 
 <h2>Environments and Technologies Used</h2>
 
@@ -34,7 +30,35 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Ensure Connectivity Between the Client (Client-1)and Domain Controller(DC-1)</h2>  
 
-- Step 1 
+- Step 1 Login to Client-1 with Remote Desktop and ping DC-1’s private IP address with ping -t <ip address> (perpetual ping)
+- Step 2 Login to the Domain Controller and enable ICMPv4 in on the local windows Firewall
+- Step 3 Check back at Client-1 to see the ping succeed
+  
+<h2>Install Active Directory</h2>
+
+- Step 1 Login to DC-1 and install Active Directory Domain Services
+- Step 2 Promote as a DC: Setup a new forest as mydomain.com (can be anything, just remember what it is)
+- Step 3 Restart and then log back into DC-1 as user: mydomain.com\user
+
+<h2>Create an Admin and Normal User Account in AD</h2>
+
+- Step 1 In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES”
+- Step 2 Create a new OU named “_ADMINS”
+- Step 3 Create a new employee named “Jane Doe” (same password) with the username of “jane_admin”
+- Step 4 Add jane_admin to the “Domain Admins” Security Group
+- Setp 5 Log out/close the Remote Desktop connection to DC-1 and log back in as “mydomain.com\jane_admin”
+- Step 6 User jane_admin as your admin account from now on
+
+  <h2>Join Client-1 to Your Domain (mydomain.com)</h2>
+
+- Step 1 From the Azure Portal, set Client-1’s DNS settings to the DC’s Private IP address
+- Step 2 From the Azure Portal, restart Client-1
+- Step 3 Login to Client-1 (Remote Desktop) as the original local admin (labuser) and join it to the domain (computer will restart)
+- Step 4 Login to the Domain Controller (Remote Desktop) and verify Client-1 shows up in Active Directory Users and Computers (ADUC) inside the “Computers” container on the root of the domain
+
+<h2></h2>
+  
+ 
 
 <h2>Deployment and Configuration Steps</h2>
 
