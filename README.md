@@ -56,7 +56,13 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Step 3 Login to Client-1 (Remote Desktop) as the original local admin (labuser) and join it to the domain (computer will restart)
 - Step 4 Login to the Domain Controller (Remote Desktop) and verify Client-1 shows up in Active Directory Users and Computers (ADUC) inside the “Computers” container on the root of the domain
 
-<h2></h2>
+<h2>Setup Remote Desktop for Non-Administrative Users on Client-1</h2>
+
+- Step 1 Log into Client-1 as mydomain.com\jane_admin and open System Properties
+- Step 2 Click “Remote Desktop”
+- Step 3 Allow “omain Users” access to Remote Desktop
+- Step 4 You can now log into Client-1 as a normal, non-administrative user now
+
   
  
 
