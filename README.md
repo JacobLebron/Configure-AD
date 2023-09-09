@@ -63,8 +63,15 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Step 3 Allow “omain Users” access to Remote Desktop
 - Step 4 You can now log into Client-1 as a normal, non-administrative user now
 
-  
- 
+<h2>Create a Bunch of Additional Users and Attempt to Log into Client-1 with One of the Users</h2>
+
+- Step 1 Login to DC-1 as jane_admin
+- Step 2 Open PowerShell ISE as an administrator
+- Step 3 Create a new File and paste the contents of the script into it (https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
+- Step 4 Run the script and observe the accounts being created
+- Step 5 When finished, open ADUC and observe the accounts in the appropriate OU
+- step 6 Attempt to log into Client-1 with one of the accounts (take note of the password in the script)
+
 
 <h2>Deployment and Configuration Steps</h2>
 
